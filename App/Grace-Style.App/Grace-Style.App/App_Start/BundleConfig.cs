@@ -8,23 +8,45 @@ namespace Grace_Style.App
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            #region Styles
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+            bundles.Add(new StyleBundle("~/Styles/css").Include(
+                "~/Styles/animation.css",
+                "~/Styles/site.css"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+            bundles.Add(new StyleBundle("~/Styles/backgroundmodule").Include(
+                "~/Styles/Background/backgroundanimation.css",
+                "~/Styles/Background/backgroundxxs.css",
+                "~/Styles/Background/backgroundxs.css",
+                "~/Styles/Background/backgroundsm.css",
+                "~/Styles/Background/backgroundmd.css",
+                "~/Styles/Background/backgroundlg.css",
+                "~/Styles/Background/backgroundxl.css",
+                "~/Styles/Background/backgroundxxl.css",
+                "~/Styles/Background/backgroundsite.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+            #endregion Styles
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+
+            #region Scripts
+
+            bundles.Add(new ScriptBundle("~/Script/jquery").Include(
+                        "~/Scripts/jQuery/jquery-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/Script/backgroundmodule").Include(
+                        "~/Scripts/Background/backgroundModel.js",
+                        "~/Scripts/Background/backgroundView.js",
+                        "~/Scripts/Background/backgroundController.js"));
+
+            bundles.Add(new ScriptBundle("~/Script/framework").Include(
+                        "~/Scripts/Framework/htmlElements.js",
+                        "~/Scripts/Framework/model.js",
+                        "~/Scripts/Framework/view.js",
+                        "~/Scripts/Framework/controller.js"));
+
+            #endregion Scripts
+
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
